@@ -110,60 +110,7 @@ function App() {
       });
   }
 
-  function replyPost(postid) {
-    setIsLoading(true);
-    axios
-      .post(
-        `http://hyeumine.com/forumReplyPost.php`,
-        {
-          user_id: user.id,
-          post_id: postid,
-          reply: document.getElementById("reply-" + postid).value,
-        },
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        }
-      )
-      .then((response) => {
-        if (!(response.status === 200 && response.statusText === "OK")) {
-          throw new Error("Network response was not ok");
-        }
-        console.log(response.data);
-        setIsLoading(false);
-        setLoader(Math.random() * 1000);
-        document.getElementById("reply-" + postid).value = "";
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      });
-  }
 
-  function deleteReply(replyid) {
-    setIsLoading(true);
-    axios
-      .post(
-        `http://hyeumine.com/forumDeleteReply.php?id=${replyid}`,
-        {},
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        }
-      )
-      .then((response) => {
-        if (!(response.status === 200 && response.statusText === "OK")) {
-          throw new Error("Network response was not ok");
-        }
-        console.log(response.data);
-        setIsLoading(false);
-        setLoader(Math.random() * 1000);
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      });
-  }
 
   function deletePost(postid) {
     setIsLoading(true);

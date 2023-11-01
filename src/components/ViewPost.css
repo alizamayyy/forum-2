@@ -1,0 +1,184 @@
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+
+
+.user-post {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.70);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0.18%, rgba(235, 157, 179, 0.33) 99.29%, rgba(217, 217, 217, 0.00) 100%);
+    padding: 5%;
+}
+
+.text-field {
+    width: 70%;
+    height: 31px;
+    margin-right: 8px;
+    border-radius: 20px;
+    border: 1px solid #FF7096;
+    background: #FFF;
+}
+
+.reply-bottom-container {}
+
+.posts-display {
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    padding: 60px;
+    border: 1px solid #FFF;
+    background: linear-gradient(180deg, rgba(255, 92, 138, 0.70) 0.18%, rgba(235, 157, 179, 0.33) 99.29%, rgba(217, 217, 217, 0.00) 100%);
+    overflow: auto;
+}
+
+#myButton {
+    font-family: monospace;
+    padding: 5px;
+    width: 125px;
+    font-weight: bold;
+    height: 37px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: #FF7096;
+}
+
+#myButton1 {
+    font-family: monospace;
+    padding: 5px;
+    width: 125px;
+    font-weight: bold;
+    height: 37px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: black;
+}
+
+.bubble {
+
+    word-wrap: break-word;
+    display: inline-block;
+    position: relative;
+    padding: 30px 40px;
+    border-radius: 10px;
+    border: 3px solid black;
+    background: white;
+    font-family: "Permanent Marker";
+    clear: both;
+    word-wrap: break-word;
+
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        height: 50px;
+        width: 90px;
+    }
+
+    &.left {
+        float: left;
+        margin: 10px 100px 60px 10px;
+
+        &:before {
+            border-radius: 0 0 100%;
+            box-shadow:
+                -2px -2px 0 0 #000 inset,
+                -23px 0 0 0 #fff inset,
+                -25px -2px 0 0 #000 inset;
+            left: 0;
+        }
+    }
+
+    &.right {
+        float: right;
+        margin: 10px 10px 60px 100px;
+
+        &:before {
+            border-radius: 0 0 0 100%;
+            box-shadow: 2px -2px 0 0 #000 inset, 23px 0 0 0 #fff inset,
+                25px -2px 0 0 #000 inset;
+            right: 0;
+        }
+    }
+
+    &.think {
+        &:before {
+            height: 3px;
+            width: 3px;
+            bottom: -20px;
+            border-radius: 100%;
+            background: #fff;
+        }
+
+        &.left:before {
+            left: 50px;
+            box-shadow: 0 0 0 7px white, 0 0 0 10px black, -20px 15px 0 5px white,
+                -20px 15px 0 8px black, -40px 20px 0 2px white, -40px 20px 0 5px black;
+        }
+
+        &.right:before {
+            right: 50px;
+            box-shadow: 0 0 0 7px white, 0 0 0 10px black, 20px 15px 0 5px white,
+                20px 15px 0 8px black, 40px 20px 0 2px white, 40px 20px 0 5px black;
+        }
+    }
+
+    &.yell {
+        &:before {
+            height: 0px;
+            width: 0px;
+            bottom: -8px;
+            border-radius: 0;
+            background: #fff;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -41px;
+            height: 20px;
+            width: 59px;
+        }
+
+        &.left {
+            &:before {
+                transform: skew(-45deg);
+                left: 50px;
+                box-shadow:
+                    0 0 0 7px white,
+                    0 -3px 0 5px white, 0 0 0 5px white, 0 8px 0 5px white,
+                    8px 8px 0 5px white, 16px 8px 0 5px white, 24px 8px 0 5px white,
+                    0 0 0 8px black, 0 8px 0 8px black, 8px 8px 0 8px black,
+                    16px 8px 0 8px black, 24px 8px 0 8px black;
+            }
+
+            &:after {
+                border-radius: 0 0 60%;
+                transform: skew(-45deg);
+                box-shadow: -3px -2px 0 0 #000 inset, -14px 0 0 0 #fff inset,
+                    -17px -2px 0 0 #000 inset;
+                left: 0;
+            }
+        }
+
+        &.right {
+            &:before {
+                transform: skew(45deg);
+                right: 50px;
+                box-shadow: 0 -3px 0 5px white, 0 0 0 5px white, 0 8px 0 5px white,
+                    -8px 8px 0 5px white, -16px 8px 0 5px white, -24px 8px 0 5px white,
+                    0 0 0 8px black, 0 8px 0 8px black, -8px 8px 0 8px black,
+                    -16px 8px 0 8px black, -24px 8px 0 8px black;
+            }
+
+            &:after {
+                border-radius: 0 0 0 60%;
+                transform: skew(45deg);
+                box-shadow: 3px -2px 0 0 #000 inset, 14px 0 0 0 #fff inset,
+                    17px -2px 0 0 #000 inset;
+                right: 0;
+            }
+        }
+    }
+}

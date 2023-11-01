@@ -3,11 +3,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import ViewPost from "../components/ViewPost";
 function Home() {
   const location = useLocation();
   const user = location.state.user || null;
-  console.log(user);
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState([{}]);
   const [isLoading, setIsLoading] = useState(true);
@@ -60,85 +59,8 @@ function Home() {
       });
   }
 
-  function replyPost(postid) {
-    setIsLoading(true);
-    axios
-      .post(
-        `http://hyeumine.com/forumReplyPost.php`,
-        {
-          user_id: user.id,
-          post_id: postid,
-          reply: document.getElementById("reply-" + postid).value,
-        },
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        }
-      )
-      .then((response) => {
-        if (!(response.status === 200 && response.statusText === "OK")) {
-          throw new Error("Network response was not ok");
-        }
-        console.log(response.data);
-        setIsLoading(false);
-        setLoader(Math.random() * 1000);
-        document.getElementById("reply-" + postid).value = "";
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      });
-  }
 
-  function deleteReply(replyid) {
-    setIsLoading(true);
-    axios
-      .post(
-        `http://hyeumine.com/forumDeleteReply.php?id=${replyid}`,
-        {},
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        }
-      )
-      .then((response) => {
-        if (!(response.status === 200 && response.statusText === "OK")) {
-          throw new Error("Network response was not ok");
-        }
-        console.log(response.data);
-        setIsLoading(false);
-        setLoader(Math.random() * 1000);
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      });
-  }
-
-  function deletePost(postid) {
-    setIsLoading(true);
-    axios
-      .post(
-        `http://hyeumine.com/forumDeletePost.php?id=${postid}`,
-        {},
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        }
-      )
-      .then((response) => {
-        if (!(response.status === 200 && response.statusText === "OK")) {
-          throw new Error("Network response was not ok");
-        }
-        console.log(response.data);
-        setIsLoading(false);
-        setLoader(Math.random() * 1000);
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      });
-  }
+ 
 
   function logout() {
     navigate("/");
@@ -156,98 +78,27 @@ function Home() {
           <Button id="log1-button" variant="contained" onClick={logout}>
             Logout
           </Button>
-          <button
-            onClick={() => {
-              setPage(page > 1 ? page - 1 : 1);
-            }}
-          >
-            Prev Page
-          </button>{" "}
-          |
-          <button
-            onClick={() => {
-              setPage(page + 1);
-            }}
-          >
-            Next Page
-          </button>
         </div>
-        <div className="posts-display">
-          {posts.map((post, id) => {
-            return (
-              <div
-                key={id}
-                style={{
-                  textAlign: "right",
-                  padding: "10px",
-                  width: "80%",
-                  margin: "10px auto",
-                }}
-              >
-                {user !== null && user.id === post.uid ? (
-                  <>
-                    <button
-                      onClick={() => {
-                        deletePost(post.id);
-                      }}
-                      style={{ fontSize: "7px" }}
-                    >
-                      X
-                    </button>
-                  </>
-                ) : (
-                  <></>
-                )}
-                <h3>{post.post}</h3>
-                <h5 style={{ fontStyle: "italic" }}>{post.user}</h5>
-                <div style={{ background: "#eee" }}>
-                  {user !== null ? (
-                    <>
-                      <textarea id={"reply-" + post.id} />
-                      <button onClick={() => replyPost(post.id)}>Reply</button>
-                      <br />
-                    </>
-                  ) : (
-                    <></>
-                  )}
-                  {post.reply ? (
-                    <>
-                      {post.reply.map((reply, id) => {
-                        return (
-                          <div
-                            key={id}
-                            style={{ margin: "5px", padding: "10px" }}
-                          >
-                            {user !== null && user.id === reply.uid ? (
-                              <>
-                                <button
-                                  onClick={() => {
-                                    deleteReply(reply.id);
-                                  }}
-                                  style={{ fontSize: "7px" }}
-                                >
-                                  X
-                                </button>
-                              </>
-                            ) : (
-                              <></>
-                            )}
-                            <h3>{reply.reply}</h3>
-                            <h6 style={{ fontStyle: "italic" }}>
-                              {reply.user}
-                            </h6>
-                          </div>
-                        );
-                      })}
-                    </>
-                  ) : (
-                    <>No Replies Yet</>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+        <div className="right-side">
+          <ViewPost user={user} page={page} loader={loader} setLoader={setLoader} isLoading = {isLoading} setIsLoading = {setIsLoading}></ViewPost>
+          <div className="bottom-placeholder">
+            <button
+              onClick={() => {
+                setPage(page > 1 ? page - 1 : 1);
+              }}
+            >
+              Prev Page
+            </button>{" "}
+            <button
+              onClick={() => {
+                setPage(page + 1);
+              }}
+            >
+              Next Page
+            </button>
+          </div>
         </div>
+
       </div>
     </>
   );

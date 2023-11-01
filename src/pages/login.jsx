@@ -37,7 +37,7 @@ const Login = () => {
         }
       )
       .then((response) => {
-        console.log(response.data);
+   
         if (!(response.status === 200 && response.statusText === "OK")) {
           throw new Error("Network response was not ok");
         }
