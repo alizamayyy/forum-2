@@ -24,6 +24,7 @@ function Home() {
         setPosts(response.data);
         setIsLoading(false);
         console.log(isLoading);
+        console.log(posts);
       })
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
@@ -32,6 +33,12 @@ function Home() {
 
   function postPost() {
     setIsLoading(true);
+    const postContent = document.getElementById("poster").value;
+
+    if (postContent.trim() === "") {
+      console.log("empty post");
+      return;
+    }
     axios
       .post(
         `http://hyeumine.com/forumNewPost.php`,
@@ -59,9 +66,6 @@ function Home() {
       });
   }
 
-
- 
-
   function logout() {
     navigate("/");
   }
@@ -80,25 +84,36 @@ function Home() {
           </Button>
         </div>
         <div className="right-side">
-          <ViewPost user={user} page={page} loader={loader} setLoader={setLoader} isLoading = {isLoading} setIsLoading = {setIsLoading}></ViewPost>
-          <div className="bottom-placeholder">
-            <button
+          <ViewPost
+            user={user}
+            page={page}
+            loader={loader}
+            setLoader={setLoader}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          ></ViewPost>
+
+          <div className="page-navigation">
+            <Button
+              id="page"
+              variant="contained"
               onClick={() => {
                 setPage(page > 1 ? page - 1 : 1);
               }}
             >
               Prev Page
-            </button>{" "}
-            <button
+            </Button>
+            <Button
+              id="page1"
+              variant="contained"
               onClick={() => {
                 setPage(page + 1);
               }}
             >
               Next Page
-            </button>
+            </Button>
           </div>
         </div>
-
       </div>
     </>
   );

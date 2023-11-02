@@ -3,15 +3,14 @@ import { Button } from "@mui/material";
 import "../App.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import sakuraImage from "../assets/sakura.png";
 
 const Login = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const [showHelloWorld, setShowHelloWorld] = useState(false);
+  const [showCreateUser, setShowCreateUser] = useState(false);
 
   const toggleHelloWorld = () => {
-    setShowHelloWorld(!showHelloWorld);
+    setShowCreateUser(!showCreateUser);
   };
 
   const createNewUser = () => {
@@ -37,14 +36,13 @@ const Login = () => {
         }
       )
       .then((response) => {
-   
         if (!(response.status === 200 && response.statusText === "OK")) {
           throw new Error("Network response was not ok");
         }
         setUser(response.data);
 
         window.alert("User successfully created!");
-        setShowHelloWorld(!showHelloWorld);
+        setShowCreateUser(!showCreateUser);
       })
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
@@ -76,6 +74,7 @@ const Login = () => {
       if (response.data.success) {
         const userData = response.data.user;
         setUser(userData);
+        console.log(user);
         navigate("home", { state: { user: userData } });
       } else {
         window.alert("User not found!");
@@ -104,18 +103,38 @@ const Login = () => {
     if (nPasswordInput) {
       nPasswordInput.value = "";
     }
+    if (usernameInput && passwordInput) {
+      usernameInput.value = "";
+      passwordInput.value = "";
+    }
+    if (nUsernameInput && nPasswordInput) {
+      nUsernameInput.value = "";
+      nPasswordInput.value = "";
+    }
   };
 
   return (
     <>
       <div className="login-page">
         <div className="title">
-          <img src={sakuraImage} alt="Sakura Image" width="400" height="300" />
-          <h1>Hello World</h1>
+          <div>
+            <h1
+              className="bubble left"
+              style={{
+                fontSize: "100px",
+                padding: "70px",
+                textAlign: "center",
+                color: "#fd638f",
+              }}
+            >
+              FORUM
+            </h1>
+            <h1 className="bubble right"></h1>
+          </div>
         </div>
         <div className="login-card-container">
           <div className="login-card">
-            {showHelloWorld ? (
+            {showCreateUser ? (
               <>
                 <div className="header-text">Create Account</div>
                 <input

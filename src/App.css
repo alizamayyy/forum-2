@@ -49,6 +49,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Inter";
 }
 
 .bottom-placeholder{
@@ -58,46 +59,46 @@ body {
   flex-direction: row;
   justify-content: center;
   border: 1px solid #FFF;
-  background: #D9D9D9;
+  background: transparent;
 }
 
 #log-button {
   background-color: black;
-  font-family: monospace;
   border-radius: 30px;
   padding: 5px;
   width: 125px;
   font-weight: bold;
   margin-bottom: 20px;
-  height: 37px
+  height: 37px;
+  font-family: "Inter";
 }
 
 #username, #nusername {
   background: rgba(217, 217, 217, 0.5);
   color: black;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 5px;
   padding-left: 12px;
   margin-bottom: 10px;
-  font-family: monospace;
   height: 27px;
   width: 190px;
   outline: none;
+  font-family: "Inter";
 }
 
 #password, #npassword {
-  background: rgba(217, 217, 217, 0.5);
   color: black;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 5px;
   padding-left: 12px;
   margin-bottom: 20px;
-  font-family: monospace;
   height: 27px;
   width: 190px;
   outline: none;
+  font-family: "Inter";
+  border-radius: 12px;
+border: 1px solid rgba(255, 255, 255, 0.50);
+background: rgba(217, 217, 217, 0.50);
 }
 
 /* Styles for input fields when focused */
@@ -122,11 +123,13 @@ body {
   align-items: center;
   flex-direction: column;
   margin-bottom: 15px;
+  font-family: "Inter";
 }
 
 .username-div {
   margin-bottom: 10px;
   border: none;
+  font-family: "Inter";
 }
 
 
@@ -135,23 +138,45 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  background: #ff477e;
-background: -webkit-linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
-background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
+  background: linear-gradient(180deg, #FF5C8A 0.50%, rgba(235, 157, 179, 0.9) 99.29%, rgba(217, 217, 217, 0.00) 100%);
+font-family: "Inter";
 }
 
 
 
 .title {
-  background-color: rgba(255, 224, 230, 0.5); /* 50% opacity white */
-  /* flex: 1.3; */
+  background-color: rgba(255, 224, 230, 0.3);
   width: 100%;
-  border-radius: 0 50px 50px 0; /* top-right and bottom-right corners have 10px radius */
+  font-family: "Inter";
+  border-radius: 0 50px 50px 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title-forum {
+  background: url('./assets/sakura3.jpg');
+  background-size: 1300px 1300px;
+  background-position: 50% 50%;
+  width: fit-content;
+  font-family: "Inter";
+  border-radius: 0 50px 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: transparent; /* Make the text transparent */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  background-clip: text; /* Clip the background to the text */
+  font-size: 200px;
+  font-weight: bolder;
 }
 
 .loginout {
   /* flex: 1; */
   align-items: center;
+  font-family: "Inter";
 }
 
 .card-container {
@@ -161,6 +186,7 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   justify-content: center;
   height: 100vh;
   width: 100%;
+  font-family: "Inter";
 }
 
 .card {
@@ -172,6 +198,7 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   transform-origin: center;
   transform: translateX(0); 
   /* background-color: rgb(255, 224, 230); */
+  font-family: "Inter";
 }
 
 .login-card-container {
@@ -181,21 +208,23 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   justify-content: center;
   text-align: center;
   width: 50%;
+  font-family: "Inter";
 }
 
 .login-card {
-  width: 270px;
-  height: 340px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 280px;
+  height: 357px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(217, 217, 217, 0.10);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   padding: 20px;
+  font-family: "Inter";
 }
 
 
@@ -214,6 +243,7 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 20px;
+  font-family: "Inter";
 }
 
 .login-card {
@@ -233,11 +263,16 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   text-decoration: none;
   color: red;
   margin-left: 5px;
+  font-family: "Inter";
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 .for-flip {
   display: flex;
   align-items: center;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .header-text {
@@ -245,7 +280,9 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   font-weight: bold;
   margin-bottom: 30px;
   margin-top: -20px;
-  font-family: monospace;
+  font-family: "Inter";
+  font-weight: 600;
+  color: white;
 }
 
 .home-page {
@@ -256,6 +293,19 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   background: #ff477e;
   background: -webkit-linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
+  font-family: "Inter";
+}
+
+.page-navigation {
+  position: fixed;
+  bottom: 0;
+  width: 80%;
+  left: 102%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  display: flex;
+  padding: 10px;
+  z-index: 1;
 }
 
 .posting {
@@ -265,6 +315,7 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   justify-content: center;
   align-items: center;
   overflow:hidden; 
+  font-family: "Inter";
 
 }
 
@@ -272,25 +323,28 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   width: 65%;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 
 #poster {
   width: 50%;
   height: 125px;
-  padding-left: 40px;
-  line-height: 125px;
   font-weight: bold;
   border: 1px solid transparent;
-  color: rgba(0, 0, 0, 0.6);
+  color: black;
+  background-color: white;
   border-radius: 25px;
   border: 3px solid rgba(255, 112, 150, 0.6);
-  /* background: rgba(217, 217, 217, 10); */
-  /* outline: white; */
+  line-height: 125px;
+  padding-left: 40px;
+  font-family: "Inter";
 }
 
 #poster::placeholder {
-  color: black;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 125px;
+  font-family: "Inter";
 }
 
 #poster:focus {
@@ -304,7 +358,6 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
 #post-button {
   color: white;
   background-color: #ff7096;
-  font-family: monospace;
   border-radius: 30px;
   border: 2px solid white;
   padding: 5px;
@@ -312,20 +365,204 @@ background: linear-gradient(360deg, #ff477e 0%, #fbb1bd 100%);
   font-weight: bold;
   height: 37px;
   position: absolute;
-  top: 47%;
+  top: 50%;
   left: 24%; 
+  font-family: "Inter";
+  font-size: 12px;
 }
 
 #log1-button {
   color: white;
-  background-color: #ff7096;
-  font-family: monospace;
-  border-radius: 30px;
+  background-color: #d7263d;
+  border-radius: 10px;
   border: 2px solid white;
   padding: 5px;
   width: 90px;
   font-weight: bold;
+  font-family: "Inter";
+  font-size: 12px;
   height: 37px;
   top: 35%;
   left: -35%; 
+}
+
+#page {
+  color: white;
+  background-color: #bf0603;
+  border-radius: 30px;
+  border: 2px solid white;
+  padding: 5px;
+  width: 100px;
+  font-weight: bold;
+  font-family: "Inter";
+  font-size: 12px;
+  height: 37px;
+  margin-right: 10px;
+}
+
+#page1 {
+  color: white;
+  background-color: #bf0603;
+  border-radius: 30px;
+  border: 2px solid white;
+  padding: 5px;
+  width: 100px;
+  font-weight: bold;
+  font-family: "Inter";
+  font-size: 12px;
+  height: 37px;
+}
+
+#page2 {
+  color: white;
+  background-color: #bf0603;
+  border: 2px solid white;
+  font-weight: bold;
+  font-family: "Inter";
+  font-size: 12px;
+  align-content: center;
+  width: 10px;
+  border-radius: 40px;
+  font-size: 10px;
+}
+
+#page2 .MuiButton-startIcon {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+h1.bubble {
+  word-wrap: break-word;
+  display: inline-block;
+  position: relative;
+  padding: 40px;
+  border-radius: 100px;
+  border: 2px solid #fd638f;
+  background: white;
+  font-family: "Inter";
+  clear: both;
+  word-wrap: break-word;
+  bottom: 35px;
+  min-width: 100px;
+  max-width: 600px;
+  left: -20px;
+  margin-top: 60px;
+
+  &:before {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      height: 50px;
+      width: 100px;
+  }
+
+  &.left {
+      float: left;
+      text-align: center;
+
+      &:before {
+          border-radius: 0 0 100%;
+          box-shadow:
+              -1px -2px 0 0 #fd638f inset,
+              -23px 0 0 0 #fff inset,
+              -25px -2px 0 0 #fd638f inset;
+          left: 0;
+      }
+  }
+
+  &.right {
+      float: right;
+      margin: 10px 10px 60px 100px;
+
+      &:before {
+          border-radius: 0 0 0 100%;
+          box-shadow: 2px -2px 0 0 #fd638f inset, 23px 0 0 0 #fff inset,
+              25px -2px 0 0 #fd638f inset;
+          right: 0;
+      }
+  }
+
+  &.think {
+      &:before {
+          height: 3px;
+          width: 3px;
+          bottom: -20px;
+          border-radius: 100%;
+          background: #fff;
+      }
+
+      &.left:before {
+          left: 50px;
+          box-shadow: 0 0 0 7px white, 0 0 0 10px black, -20px 15px 0 5px white,
+              -20px 15px 0 8px black, -40px 20px 0 2px white, -40px 20px 0 5px black;
+      }
+
+      &.right:before {
+          right: 50px;
+          box-shadow: 0 0 0 7px white, 0 0 0 10px black, 20px 15px 0 5px white,
+              20px 15px 0 8px black, 40px 20px 0 2px white, 40px 20px 0 5px black;
+      }
+  }
+
+  &.yell {
+      &:before {
+          height: 0px;
+          width: 0px;
+          bottom: -8px;
+          border-radius: 0;
+          background: #fff;
+      }
+
+      &:after {
+          content: "";
+          position: absolute;
+          bottom: 1px;
+          height: 20px;
+          width: auto;
+      }
+
+      &.left {
+          &:before {
+              transform: skew(-45deg);
+              left: 50px;
+              box-shadow:
+                  0 0 0 7px white,
+                  0 -3px 0 5px white, 0 0 0 5px white, 0 8px 0 5px white,
+                  8px 8px 0 5px white, 16px 8px 0 5px white, 24px 8px 0 5px white,
+                  0 0 0 8px black, 0 8px 0 8px black, 8px 8px 0 8px black,
+                  16px 8px 0 8px black, 24px 8px 0 8px black;
+          }
+
+          &:after {
+              border-radius: 0 0 60%;
+              transform: skew(-45deg);
+              box-shadow: -3px -2px 0 0 #000 inset, -14px 0 0 0 #fff inset,
+                  -17px -2px 0 0 #000 inset;
+              left: 0;
+          }
+      }
+
+      &.right {
+          &:before {
+              transform: skew(45deg);
+              right: 50px;
+              box-shadow: 0 -3px 0 5px white, 0 0 0 5px white, 0 8px 0 5px white,
+                  -8px 8px 0 5px white, -16px 8px 0 5px white, -24px 8px 0 5px white,
+                  0 0 0 8px black, 0 8px 0 8px black, -8px 8px 0 8px black,
+                  -16px 8px 0 8px black, -24px 8px 0 8px black;
+          }
+
+          &:after {
+              border-radius: 0 0 0 60%;
+              transform: skew(45deg);
+              box-shadow: 3px -2px 0 0 #000 inset, 14px 0 0 0 #fff inset,
+                  17px -2px 0 0 #000 inset;
+              right: 0;
+          }
+      }
+  }
 }

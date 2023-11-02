@@ -1,115 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Inter);
-
-
-.user-post {
-    position: relative;
+.reply-div {
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
-    margin-right: 50px;
-    margin-top: 25px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.70);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0.18%, rgba(235, 157, 179, 0.33) 99.29%, rgba(217, 217, 217, 0.00) 100%);
-    padding: 5%;
-    font-family: "Inter";
-    padding-bottom: 15px;
-}
-
-.text-field {
-    width: 35%;
-    height: 31px;
-    margin-right: 10px;
-    margin-left: auto;
-    border-radius: 20px;
-    border: 2px solid #FF7096;
-    background: #FFF;
-    padding-left: 30px;
-    line-height: 30px;
+    margin-top: 30px;
     font-family: "Inter";
 }
 
-.text-field::placeholder {
-    color: rgba(0, 0, 0, 0.8);
-    font-weight: 500;
-    line-height: 30px;
-    font-family: "Inter";
-  }
-  
-  #text-field:focus {
-    border: 1px solid white; /* Change the border color when focused */
-  }
-  
-  #text-field:focus::placeholder {
-    color: transparent;
-  }
-
-.reply-bottom-container {
-    margin-top: 15px;
-}
-
-.posts-display {
-    padding-top: 20px;
-    padding: 20px;
-    padding-left: 75px;
-    padding-bottom: 30px;
-    border: 1px solid #FFF;
-    background: linear-gradient(180deg, rgba(255, 92, 138, 0.70) 0.18%, rgba(235, 157, 179, 0.33) 99.29%, rgba(217, 217, 217, 0.00) 100%);
-    overflow: auto;
-    font-family: "Inter";
-    scroll-behavior: smooth;
-  }
-  
-
-#myButton {
-    padding: 5px;
-    width: 125px;
-    font-weight: bold;
-    height: 37px;
-    border-radius: 20px;
-    border: 1px solid white;
-    background: #FF7096;
-    margin-right: 17px;
-    font-family: "Inter";
-  font-size: 12px;
-}
-
-#myButton1 {
-    padding: 5px;
-    width: 125px;
-    font-weight: bold;
-    height: 37px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.20);
-    background: black;
-    margin-left: auto;
-    font-family: "Inter";
-  font-size: 12px;
-}
-
-.to-top {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 95%;
-    background-color: transparent; /* You can adjust the background color as needed */
-    display: flex;
-    padding: 10px;
-    z-index: 2; /* Ensure the buttons are on top of other content */
-  }
-
-/* #page2 {
-    color: white;
-    background-color: #bf0603;
-    border: 2px solid white;
-    font-weight: bold;
-    font-family: "Inter";
-    font-size: 12px;
-    align-content: center;
-    width: fit-content;
-  } */
-
-.bubble {
+h3.bubble {
     word-wrap: break-word;
     display: inline-block;
     position: relative;
@@ -121,6 +17,7 @@
     clear: both;
     word-wrap: break-word;
     bottom: 35px;
+    left: 30px;
     min-width: 100px;
     max-width: 400px;
 
@@ -129,30 +26,19 @@
         position: absolute;
         bottom: -50px;
         height: 50px;
-        width: 100px;
-    }
-
-    &.left {
-        float: left;
-        text-align: center;
-
-        &:before {
-            border-radius: 0 0 100%;
-            box-shadow:
-                -1px -2px 0 0 #000 inset,
-                -23px 0 0 0 #fff inset,
-                -25px -2px 0 0 #000 inset;
-            left: 0;
-        }
+        width: 90px;
     }
 
     &.right {
         float: right;
-        margin: 10px 10px 60px 100px;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 17px;
+        max-width: 300px;
 
         &:before {
             border-radius: 0 0 0 100%;
-            box-shadow: 2px -2px 0 0 #000 inset, 23px 0 0 0 #fff inset,
+            box-shadow: 1px -2px 0 0 #000 inset, 23px 0 0 0 #fff inset,
                 25px -2px 0 0 #000 inset;
             right: 0;
         }
