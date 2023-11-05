@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ViewPost from "../components/ViewPost";
 function Home() {
   const location = useLocation();
@@ -74,6 +75,12 @@ function Home() {
     <>
       <div className="home-page">
         <div className="posting">
+          <div className="user-deets">
+            <AccountCircleIcon style={{ fontSize: "20px" }} />
+            <span style={{ marginTop: "1px", paddingLeft: "5px" }}>
+              #{user.id}: {user.username}
+            </span>
+          </div>
           <textarea id="poster" placeholder="What's on your mind?" /> <br />
           <Button id="post-button" onClick={postPost}>
             Post

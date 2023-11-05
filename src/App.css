@@ -365,7 +365,7 @@ font-family: "Inter";
   font-weight: bold;
   height: 37px;
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 24%; 
   font-family: "Inter";
   font-size: 12px;
@@ -565,4 +565,47 @@ h1.bubble {
           }
       }
   }
+}
+
+.user-details {
+
+  width: fit-content;
+  height: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  margin-left: -170px;
+  font-size: small;
+  font-weight: bold;
+}
+
+.user-details1 {
+
+  width: fit-content;
+  height: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-top: 10px;
+  font-size: small;
+  font-weight: bold;
+}
+
+.user-deets {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-size:smaller;
+  font-weight: 300;
+  margin-left: -230px;
+  margin-bottom: 5px;
+  width: fit-content;
+  position: absolute;
+  margin-top: -245px;
 }
